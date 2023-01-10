@@ -10,9 +10,14 @@ public class SpringDI {
         context.register(StartUI.class);*/
         context.scan("ru.job4j.di");
         context.refresh();
-        StartUI ui = context.getBean(StartUI.class);
+        /*StartUI ui = context.getBean(StartUI.class);
         ui.add("Petr");
         ui.add("Maks");
-        ui.print();
+        ui.print();*/
+        Store store = context.getBean(Store.class);
+        store.add("Petr");
+        store.add("Maks");
+        Store another = context.getBean(Store.class);
+        another.getAll().forEach(System.out::println);
     }
 }
