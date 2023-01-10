@@ -5,9 +5,7 @@ public class Main {
         Context context = new Context();
         context.reg(Store.class);
         context.reg(StartUI.class);
-
         StartUI ui = context.get(StartUI.class);
-
         ui.add("Petr");
         ui.add("Maks");
         ui.print();
